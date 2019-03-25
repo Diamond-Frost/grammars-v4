@@ -33,7 +33,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 grammar morsecode;
 
 morsecode
-   : letter (SPACE letter)+
+   : letter ((SPACE | SLASH | DOUBLESLASH) letter)+
    ;
 
 letter
@@ -231,6 +231,14 @@ DASH
 
 SPACE
     : ' '
+    ;
+
+SLASH
+    : '/'
+    ;
+    
+DOUBLESLASH
+    : '//'
     ;
 
 WS
